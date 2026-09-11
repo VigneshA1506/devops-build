@@ -60,7 +60,7 @@ pipeline {
  
     post {
         success {
-            echo "DEV image pushed successfully: ${DOCKER_IMAGE}:${BUILD_NUMBER}"
+            echo "DEV image pushed successful: ${DOCKER_IMAGE}:${BUILD_NUMBER}"
         }
  
         failure {
