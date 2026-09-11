@@ -82,7 +82,7 @@ pipeline {
                 sshagent(credentials: ['application-ec2-ssh']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no \
-                        ec2-user@13.126.9.45 \
+                        ec2-user@10.0.4.230 \
                         "hostname"
                     '''
                 }
@@ -111,7 +111,7 @@ pipeline {
                         sh '''
                             printf '%s\\n' "$DOCKER_TOKEN" | ssh \
                             -o StrictHostKeyChecking=no \
-                            ec2-user@13.126.9.45 \
+                            ec2-user@10.0.4.230 \
                             "docker login -u '$DOCKER_USER' --password-stdin && \
                              docker pull vickyamav/prod:${BUILD_NUMBER} && \
                              docker rm -f devops-app || true && \
